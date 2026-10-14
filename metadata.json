@@ -1,0 +1,6 @@
+{
+  "name": "Vương Quốc Diện Tích - Toán Tiểu Học",
+  "description": "Ứng dụng học toán tiểu học tương tác: ôn tập diện tích hình vuông và hình chữ nhật, luyện tập SGK, chấm điểm 2 lần thử và xếp hạng toàn quốc.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
