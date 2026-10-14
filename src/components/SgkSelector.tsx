@@ -21,7 +21,7 @@ export const SgkSelector: React.FC<SgkSelectorProps> = ({
   const sgkQuestions = QUESTIONS.filter((q) => q.category === 'sgk');
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-6">
+    <div className="w-full max-w-7xl 2xl:max-w-[1550px] mx-auto space-y-6">
       {/* Header */}
       <div className="bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-600 rounded-3xl p-6 text-white shadow-xl flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>

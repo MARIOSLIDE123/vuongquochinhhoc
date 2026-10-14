@@ -19,7 +19,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({ student, onNavigate }) =
   const dailyCompleted = Math.min(dailyTarget, student.completedQuestions % dailyTarget || (student.completedQuestions > 0 ? dailyTarget : 0));
 
   return (
-    <div className="w-full max-w-5xl mx-auto space-y-6">
+    <div className="w-full max-w-7xl 2xl:max-w-[1550px] mx-auto space-y-6">
       {/* AREA 1: STUDENT PROFILE & HERO BANNER */}
       <div className="bg-gradient-to-r from-sky-400 via-blue-500 to-indigo-600 rounded-3xl p-6 md:p-8 text-white shadow-xl relative overflow-hidden border-4 border-white">
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">

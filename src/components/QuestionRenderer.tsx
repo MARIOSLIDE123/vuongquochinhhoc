@@ -91,32 +91,32 @@ export const QuestionRenderer: React.FC<QuestionRendererProps> = ({
   };
 
   return (
-    <div className="w-full bg-white rounded-3xl p-3.5 sm:p-5 lg:p-6 border-2 border-sky-100 shadow-xl shadow-sky-100/50 transition-all">
+    <div className="w-full bg-white rounded-3xl p-3.5 sm:p-5 lg:p-7 2xl:p-8 border-2 border-sky-100 shadow-xl shadow-sky-100/50 transition-all">
       {/* Top Question Status Bar */}
       <div className="flex items-center justify-between pb-2.5 border-b border-slate-100 mb-3">
         <div className="flex items-center gap-2">
-          <span className="text-[11px] sm:text-xs font-black uppercase tracking-wider text-sky-700 bg-sky-100/90 px-3 py-1 rounded-full shadow-2xs">
+          <span className="text-[11px] sm:text-xs lg:text-sm font-black uppercase tracking-wider text-sky-700 bg-sky-100/90 px-3.5 py-1 rounded-full shadow-2xs">
             {question.category === 'sgk' ? 'Bài tập SGK' : `Thử thách Cấp độ ${question.level}`}
           </span>
-          <span className="text-xs font-semibold text-slate-500">
+          <span className="text-xs sm:text-sm font-semibold text-slate-500">
             Lượt thử: <strong className="text-amber-600 font-bold">{attemptNumber}/2</strong>
           </span>
         </div>
 
-        <div className="flex items-center gap-1.5 text-xs font-bold text-amber-900 bg-amber-50 px-3 py-1 rounded-full border border-amber-200">
-          <Sparkles className="w-3.5 h-3.5 text-amber-500" />
+        <div className="flex items-center gap-1.5 text-xs sm:text-sm font-bold text-amber-900 bg-amber-50 px-3.5 py-1 rounded-full border border-amber-200">
+          <Sparkles className="w-4 h-4 text-amber-500" />
           <span>+{attemptNumber === 1 ? '10' : '5'} điểm</span>
         </div>
       </div>
 
       {/* Main 2-Column Responsive Layout (Requirement 1 & 2: Full screen width optimization, no scroll) */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-6 items-stretch">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-6 2xl:gap-8 items-stretch">
         {/* LEFT COLUMN: Question Title, Description, and Geometry Diagram */}
         <div className="lg:col-span-6 flex flex-col justify-start">
-          <h2 className="text-base sm:text-lg lg:text-xl font-black text-slate-800 leading-snug mb-1">
+          <h2 className="text-base sm:text-lg lg:text-xl 2xl:text-2xl font-black text-slate-800 leading-snug mb-1.5">
             {question.title}
           </h2>
-          <p className="text-slate-600 text-xs sm:text-sm lg:text-base mb-2.5 leading-relaxed font-medium">
+          <p className="text-slate-600 text-xs sm:text-sm lg:text-base 2xl:text-lg mb-2.5 leading-relaxed font-medium">
             {question.description}
           </p>
 
@@ -125,14 +125,14 @@ export const QuestionRenderer: React.FC<QuestionRendererProps> = ({
         </div>
 
         {/* RIGHT COLUMN: Interactive Answer Form / Options */}
-        <div className="lg:col-span-6 flex flex-col justify-center bg-slate-50/70 p-3 sm:p-4 rounded-2xl border border-slate-200/80">
-          <div className="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-2.5">
+        <div className="lg:col-span-6 flex flex-col justify-center bg-slate-50/70 p-3 sm:p-5 lg:p-6 rounded-2xl border border-slate-200/80">
+          <div className="text-[11px] sm:text-xs lg:text-sm font-bold text-slate-400 uppercase tracking-wider mb-2.5">
             Lựa chọn câu trả lời của con:
           </div>
 
           {/* TYPE 1: SINGLE CHOICE (SHUFFLED OPTIONS) */}
           {question.questionType === 'single_choice' && shuffledOptions.length > 0 && (
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 lg:gap-3.5">
               {shuffledOptions.map((opt, idx) => {
                 const isSelected = selectedSingle === opt;
                 const letter = String.fromCharCode(65 + idx);
@@ -146,20 +146,20 @@ export const QuestionRenderer: React.FC<QuestionRendererProps> = ({
                       setSelectedSingle(opt);
                       handleSubmit(opt);
                     }}
-                    className={`w-full p-3 rounded-2xl border-2 text-left flex items-center gap-2.5 transition-all transform active:scale-98 cursor-pointer ${
+                    className={`w-full p-3 sm:p-4 lg:p-4 2xl:p-5 rounded-2xl border-2 text-left flex items-center gap-3 transition-all transform active:scale-98 cursor-pointer ${
                       isSelected
                         ? 'bg-sky-100 border-sky-500 shadow-sm ring-2 ring-sky-200'
                         : 'bg-white border-slate-200 hover:border-sky-300 hover:bg-sky-50/40'
                     } ${isLocked ? 'opacity-70 cursor-not-allowed' : ''}`}
                   >
                     <span
-                      className={`w-8 h-8 rounded-xl flex items-center justify-center font-black text-xs shrink-0 transition-colors ${
+                      className={`w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 rounded-xl flex items-center justify-center font-black text-xs sm:text-sm lg:text-base shrink-0 transition-colors ${
                         isSelected ? 'bg-sky-600 text-white' : 'bg-slate-100 text-slate-600'
                       }`}
                     >
                       {letter}
                     </span>
-                    <span className="font-bold text-slate-800 text-xs sm:text-sm leading-tight">{opt}</span>
+                    <span className="font-bold text-slate-800 text-xs sm:text-sm lg:text-base 2xl:text-lg leading-tight">{opt}</span>
                   </button>
                 );
               })}

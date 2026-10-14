@@ -423,7 +423,7 @@ export function App() {
     <div className="min-h-screen bg-gradient-to-b from-sky-100 via-sky-50 to-amber-50 text-slate-800 flex flex-col justify-between selection:bg-amber-300">
       {/* TOP NAVIGATION BAR */}
       <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-sky-100 shadow-xs">
-        <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+        <div className="w-full max-w-7xl 2xl:max-w-[1550px] mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
           {/* Logo & App Name */}
           <button
             type="button"
@@ -501,7 +501,7 @@ export function App() {
       </header>
 
       {/* MAIN CONTENT VIEW CONTAINER */}
-      <main className="flex-1 max-w-7xl w-full mx-auto p-2 sm:p-4 md:p-5 flex flex-col justify-center">
+      <main className="flex-1 w-full max-w-7xl 2xl:max-w-[1550px] mx-auto px-3 sm:px-6 lg:px-8 py-3 sm:py-4 flex flex-col justify-center">
         {/* VIEW 1: WELCOME SCREEN */}
         {currentView === 'welcome' && (
           <div className="max-w-2xl mx-auto text-center py-6 space-y-6">
@@ -620,7 +620,7 @@ export function App() {
 
         {/* VIEW 6: PRACTICE RUNNER WITH 2-TRY MECHANISM */}
         {currentView === 'practice' && activeQuestionList.length > 0 && (
-          <div className="w-full max-w-5xl mx-auto space-y-3">
+          <div className="w-full max-w-7xl 2xl:max-w-[1550px] mx-auto space-y-3">
             {/* Top progress indicator */}
             <div className="flex items-center justify-between text-xs font-bold text-slate-600 bg-white/70 backdrop-blur-xs px-4 py-2.5 rounded-2xl border border-sky-100">
               <span className="flex items-center gap-1.5">
