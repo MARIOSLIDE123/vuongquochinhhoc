@@ -44,7 +44,7 @@ export const RegisterModal: React.FC<RegisterModalProps> = ({
       return;
     }
     if (!cleanClassName) {
-      setErrorMessage('Vui lòng nhập Lớp học của con (ví dụ: 3A1, 4B)!');
+      setErrorMessage('Vui lòng nhập Lớp học của con (ví dụ: 3A1, 3B)!');
       return;
     }
 
@@ -192,7 +192,7 @@ export const RegisterModal: React.FC<RegisterModalProps> = ({
               <input
                 type="text"
                 required
-                placeholder="Ví dụ: 3A1 hoặc 4B"
+                placeholder="Ví dụ: 3A1 hoặc 3B"
                 value={className}
                 onChange={(e) => {
                   setClassName(e.target.value);

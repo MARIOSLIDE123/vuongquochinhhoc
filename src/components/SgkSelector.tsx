@@ -27,7 +27,7 @@ export const SgkSelector: React.FC<SgkSelectorProps> = ({
         <div>
           <div className="inline-flex items-center gap-1.5 bg-white/20 px-3 py-1 rounded-full text-xs font-bold mb-2">
             <BookOpen className="w-3.5 h-3.5" />
-            <span>Toán Tiểu Học - Lớp 3 &amp; 4</span>
+            <span>Toán Tiểu Học - Lớp 3</span>
           </div>
           <h1 className="text-2xl md:text-3xl font-black">BÀI TẬP THEO SÁCH GIÁO KHOA</h1>
           <p className="text-emerald-100 text-xs md:text-sm font-medium mt-1">
